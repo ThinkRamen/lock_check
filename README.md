@@ -1,1 +1,1 @@
-# lock_check
+the purpose of this program is to audit system data from a macbook device and compile the information into a JSON object, to be sent out to an erp platform via their own api.
