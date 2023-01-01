@@ -7,13 +7,21 @@ def info_to_file():
     """
     create file with the output of the system_profiler and similar commands used to find hardware info.
     """
-    process = subprocess.PIPE('system_profiler')
-    return '87%'
+    file = open('output.txt', 'w')
+    process = subprocess.Popen('system_profiler -detailLevel mini', shell=True,
+                               stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
+    process = process.communicate()[0]
+    file.write(process)
+    return file
+
+
+info_to_file()
+
 # split info based on ':' to seperate attribute names with info.
 
 
 def battery_info():
-    return '87%'
+    return
 
 
 def bluetooth_info():
@@ -104,5 +112,6 @@ def to_dict():
 def serializer():
     json_info = json.dumps(to_dict())
     return json_info
+
 
 print(serializer())

@@ -1,0 +1,463 @@
+Apple Pay:
+
+      Apple Pay Information:  
+        Platform ID: J5Q2M00386040000
+        Serial Number: 045B47C3C14980018095208443946277D3C601601D8D39C3
+        Device: 0x73
+        Production Signed: Yes
+        Restricted Mode: No
+        Hardware: 0x00000005
+        Firmware: 0x0105
+        JCOP OS: 17.02
+
+      Controller Information:  
+        Hardware: 42.2 (PN80v ES2.1)
+        Firmware: 1.52 rev 93462
+        Middleware: 4.1.1.36
+
+Audio:
+
+    Devices:
+
+        MacBook Pro Microphone:
+
+          Default Input Device: Yes
+          Input Channels: 1
+          Manufacturer: Apple Inc.
+          Current SampleRate: 48000
+          Transport: Built-in
+          Input Source: MacBook Pro Microphone
+
+        MacBook Pro Speakers:
+
+          Default Output Device: Yes
+          Default System Output Device: Yes
+          Manufacturer: Apple Inc.
+          Output Channels: 2
+          Current SampleRate: 48000
+          Transport: Built-in
+          Output Source: MacBook Pro Speakers
+
+Bluetooth:
+
+      Apple Bluetooth Software Version: 8.0.5d7
+      Hardware, Features, and Settings:
+          Bluetooth Low Energy Supported: Yes
+          Handoff Supported: Yes
+          Instant Hot Spot Supported: Yes
+          Manufacturer: Broadcom
+          Transport: UART
+          Chipset: 4364B0
+          Firmware Version: v101 c4417
+          Connectable: Yes
+          Auto Seek Pointing: On
+          Remote wake: On
+          Vendor ID: 0x05AC
+          Product ID: 0x007B
+          Auto Seek Keyboard: On
+      Devices (Paired, Configured, etc.):
+          Device 0:
+              Major Type: Phone
+              Minor Type: Smartphone
+              Services: Wireless iAP v2, Phonebook, PAN Network Access Profile, GATT, AVRCP Device, AVRCP Device, Audio Source, Handsfree Gateway, MAP MAS-iOS, Wireless iAP, AAP Client
+              Manufacturer: Broadcom (0xB, 0x1E8)
+              Bluetooth Core Spec: 5.2
+              Firmware Version: 0x1000
+              Vendor ID: 0x004C
+              Product ID: 0x760A
+              EDR Supported: Yes
+              eSCO Supported: Yes
+              SSP Supported: Yes
+
+Camera:
+
+    FaceTime HD Camera (Built-in):
+
+      Model ID: UVC Camera VendorID_1452 ProductID_34068
+      Unique ID: 0x8020000005ac8514
+
+Controller:
+
+    Controller Information:
+
+      Model Name: Apple T2 Security Chip
+      Firmware Version: 20P420
+      Boot UUID: 8BED9FF7-5B8B-487E-8592-5F620E6CA6AA
+
+Diagnostics:
+
+    Power On Self-Test:
+
+      Last Run: 12/9/22, 7:28 PM
+      Result: Passed
+
+Ethernet Cards:
+
+    iBridge:
+
+      Type: USB
+      BSD name: en5
+      Kext name: AppleUSBNCM.kext
+      Location: /System/Library/Extensions/AppleUSBNCM.kext
+      Version: 5.0.0
+      MAC Address: ac:de:48:00:11:22
+      Product ID: 33331
+      Vendor ID: 1452
+
+Graphics/Displays:
+
+    Intel Iris Plus Graphics 655:
+
+      Chipset Model: Intel Iris Plus Graphics 655
+      Type: GPU
+      Bus: Built-In
+      VRAM (Dynamic, Max): 1536 MB
+      Vendor: Intel
+      Device ID: 0x3ea5
+      Revision ID: 0x0001
+      Metal Family: Supported, Metal GPUFamily macOS 2
+      Displays:
+        Color LCD:
+          Display Type: Built-In Retina LCD
+          Resolution: 2560 x 1600 Retina
+          Framebuffer Depth: 24-Bit Color (ARGB8888)
+          Main Display: Yes
+          Mirror: Off
+          Online: Yes
+          Automatically Adjust Brightness: Yes
+          Connection Type: Internal
+
+Hardware:
+
+    Hardware Overview:
+
+      Model Name: MacBook Pro
+      Model Identifier: MacBookPro15,2
+      Processor Name: Quad-Core Intel Core i7
+      Processor Speed: 2.7 GHz
+      Number of Processors: 1
+      Total Number of Cores: 4
+      L2 Cache: 512 KB
+      L3 Cache: 4 MB
+      Hyper-Threading Technology: Enabled
+      Memory: 16 GB
+      System Firmware Version: 1916.40.8.0.0 (iBridge: 20.16.420.0.0,0)
+
+Memory:
+
+    Memory Slots:
+
+      ECC: Disabled
+      Upgradeable Memory: No
+
+        BANK 0/ChannelA-DIMM0:
+
+          Size: 8 GB
+          Type: LPDDR3
+          Speed: 2133 MHz
+          Status: OK
+          Manufacturer: Samsung
+          Part Number: K4EBE304EC-EGCG
+
+        BANK 2/ChannelB-DIMM0:
+
+          Size: 8 GB
+          Type: LPDDR3
+          Speed: 2133 MHz
+          Status: OK
+          Manufacturer: Samsung
+          Part Number: K4EBE304EC-EGCG
+
+NVMExpress:
+
+    Apple SSD Controller:
+
+        APPLE SSD AP0512M:
+
+          Capacity: 500.28 GB (500,277,792,768 bytes)
+          TRIM Support: Yes
+          Model: APPLE SSD AP0512M
+          Revision: 1294
+          Link Width: x4
+          Link Speed: 8.0 GT/s
+          Detachable Drive: No
+          BSD Name: disk0
+          Partition Map Type: GPT (GUID Partition Table)
+          Removable Media: No
+          S.M.A.R.T. status: Verified
+
+Network:
+
+    Wi-Fi:
+
+      Type: AirPort
+      Hardware: AirPort
+      BSD Device Name: en0
+      Service Order: 0
+
+    Bluetooth PAN:
+
+      Type: Ethernet
+      Hardware: Ethernet
+      BSD Device Name: en6
+      Service Order: 1
+
+    Thunderbolt Bridge:
+
+      Type: Ethernet
+      Hardware: Ethernet
+      BSD Device Name: bridge0
+      Service Order: 2
+
+Printer Software:
+
+    PPDs:
+
+      PPDs: 
+
+    Printers:
+
+      Printers: 
+
+    Image Capture Devices:
+
+      Image Capture Devices: 
+
+    Image Capture Support:
+
+      Image Capture Support:
+          Path: /Library/Image Capture/Support/LegacyDeviceDiscoveryHelpers/AirScanLegacyDiscovery.app/Contents/Info.plist
+          Version: 16.1
+
+    System Library Extensions:
+
+      System Library Extensions:
+          Path: /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleXserveRAID.kext
+          Version: 511.141.1
+          Path: /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/FireWireStorageDeviceSpecifics.kext
+          Version: 511.141.1
+          Path: /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/USBStorageDeviceSpecifics.kext
+          Version: 511.141.1
+          Path: /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleATAPIStorage.kext
+          Version: 511.141.1
+          Path: /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SCSIDeviceSpecifics.kext
+          Version: 511.141.1
+          Path: /System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SonyXDCAMDriver.kext
+          Version: 511.141.1
+          Path: /System/Library/Extensions/AFKACIPCKext.kext
+          Version: 1.0
+          Path: /System/Library/Extensions/AppleHIDKeyboardEmbedded.kext
+          Version: 1.2.0
+          Path: /System/Library/Extensions/IOStreamFamily.kext/Contents/PlugIns/IOStreamUserClient.kext
+          Version: 1.1.0
+          Path: /System/Library/Extensions/AppleBSDKextStarter.kext/Contents/PlugIns/AppleBSDKextStarterVPN.kext
+          Version: 1.0
+          Path: /System/Library/Extensions/AppleBSDKextStarter.kext/Contents/PlugIns/AppleBSDKextStarterTMPFS.kext
+          Version: 1.0
+          Path: /System/Library/Extensions/AppleTopCase.kext
+          Version: 4050.1
+          Path: /System/Library/Extensions/AppleTopCase.kext/Contents/PlugIns/AppleTopCaseDriverV2.kext
+          Version: 4050.1
+          Path: /System/Library/Extensions/AppleTopCase.kext/Contents/PlugIns/AppleTopCaseActuatorHIDDriver.kext
+          Version: 4050.1
+          Path: /System/Library/Extensions/IOVideoFamily.kext/Contents/PlugIns/IOVideoDeviceUserClient.kext
+          Version: 1.2.0
+          Path: /System/Library/Extensions/AppleGameControllerPersonality.kext
+          Version: 1.0
+          Path: /System/Library/Extensions/AppleUSBTopCase.kext
+          Version: 256
+          Path: /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriver.kext
+          Version: 2.0.0
+          Path: /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDUserClient.kext
+          Version: 2.0.0
+          Path: /System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriverSafeBoot.kext
+          Version: 2.0.0
+          Path: /System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriverSafeBoot.kext
+          Version: 900.4.2
+          Path: /System/Library/Extensions/CellPhoneHelper.kext
+          Version: 1.4.0
+          Path: /System/Library/Extensions/IOUSBHostFamily.kext/Contents/PlugIns/IOUSBHostHIDDeviceSafeBoot.kext
+          Version: 1.2
+
+    Library Extensions:
+
+      Library Extensions: 
+
+Printers:
+
+      Status: The printers list is empty. To add printers, choose Apple menu > System Preferences…, click Printers & Scanners, and then click Add (+).
+      CUPS Version: CUPS/2.3.4 (macOS 11.7; x86_64) IPP/2.0
+
+Software:
+
+    System Software Overview:
+
+      System Version: macOS 11.7 (20G817)
+      Kernel Version: Darwin 20.6.0
+      Time since boot: 22 days 6:34
+
+Thunderbolt/USB4:
+
+    Thunderbolt Bus 1:
+
+      Vendor Name: Apple Inc.
+      Device Name: MacBook Pro
+      UID: 0x00014DF9E100E801
+      Route String: 0
+      Firmware Version: 47.5
+      Domain UUID: E116BF5F-9D81-1C54-BB9E-CC03110C5922
+      Port:
+          Status: No device connected
+          Link Status: 0x101
+          Speed: Up to 40 Gb/s x1
+          Current Link Width: 0x1
+          Receptacle: 4
+          Link Controller Firmware Version: 1.34.0
+      Port:
+          Status: No device connected
+          Link Status: 0x101
+          Speed: Up to 40 Gb/s x1
+          Current Link Width: 0x1
+          Receptacle: 3
+          Link Controller Firmware Version: 1.34.0
+
+    Thunderbolt Bus 0:
+
+      Vendor Name: Apple Inc.
+      Device Name: MacBook Pro
+      UID: 0x00014DF9E100E800
+      Route String: 0
+      Firmware Version: 47.5
+      Domain UUID: ADE23676-78A1-7B55-991A-EF719848E1A9
+      Port:
+          Status: No device connected
+          Link Status: 0x101
+          Speed: Up to 40 Gb/s x1
+          Current Link Width: 0x1
+          Receptacle: 2
+          Link Controller Firmware Version: 1.34.0
+      Port:
+          Status: No device connected
+          Link Status: 0x101
+          Speed: Up to 40 Gb/s x1
+          Current Link Width: 0x1
+          Receptacle: 1
+          Link Controller Firmware Version: 1.34.0
+
+USB:
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleUSBXHCITR
+      PCI Device ID: 0x15ec 
+      PCI Revision ID: 0x0006 
+      PCI Vendor ID: 0x8086 
+      Bus Number: 0x00 
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleUSBXHCITR
+      PCI Device ID: 0x15ec 
+      PCI Revision ID: 0x0006 
+      PCI Vendor ID: 0x8086 
+      Bus Number: 0x01 
+
+    USB 3.1 Bus:
+
+      Host Controller Driver: AppleIntelCNLUSBXHCI
+      PCI Device ID: 0x9ded 
+      PCI Revision ID: 0x0030 
+      PCI Vendor ID: 0x8086 
+
+    Apple T2 Bus:
+
+      Host Controller Driver: AppleUSBVHCIBCE
+
+        Touch Bar Backlight:
+
+          Product ID: 0x8102
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 0000000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80700000
+
+        Touch Bar Display:
+
+          Product ID: 0x8302
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 0000000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80600000
+
+        Apple Internal Keyboard / Trackpad:
+
+          Product ID: 0x027b
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 9.27
+          Serial Number: FM7836400N4J3VYAY+RDZ
+          Manufacturer: Apple Inc.
+          Location ID: 0x80500000
+
+        Headset:
+
+          Product ID: 0x8103
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.04
+          Serial Number: 000000000000
+          Manufacturer: Apple
+          Location ID: 0x80400000
+
+        Ambient Light Sensor:
+
+          Product ID: 0x8262
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80300000
+
+        FaceTime HD Camera (Built-in):
+
+          Product ID: 0x8514
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: CC28333Q41WJ3Y33B
+          Manufacturer: Apple Inc.
+          Location ID: 0x80200000
+
+        Apple T2 Controller:
+
+          Product ID: 0x8233
+          Vendor ID: 0x05ac (Apple Inc.)
+          Version: 2.01
+          Serial Number: 0000000000000000
+          Manufacturer: Apple Inc.
+          Location ID: 0x80100000
+
+Wi-Fi:
+
+      Software Versions:
+          CoreWLAN: 16.0 (1657)
+          CoreWLANKit: 16.0 (1657)
+          Menu Extra: 17.0 (1728)
+          System Information: 15.0 (1502)
+          IO80211 Family: 12.0 (1200.12.2b1)
+          Diagnostics: 11.0 (1163)
+          AirPort Utility: 6.3.9 (639.15)
+      Interfaces:
+        en0:
+          Card Type: AirPort Extreme  (0x14E4, 0x7BF)
+          Firmware Version: wl0: Aug 10 2021 19:55:28 version 9.30.444.18.32.5.71 FWID 01-93db3422
+          MAC Address: f0:18:98:59:5b:39
+          Locale: FCC
+          Country Code: US
+          Supported PHY Modes: 802.11 a/b/g/n/ac
+          Supported Channels: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 36, 40, 44, 48, 52, 56, 60, 64, 100, 104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 149, 153, 157, 161, 165
+          Wake On Wireless: Supported
+          AirDrop: Supported
+          AirDrop Channel: 149
+          Auto Unlock: Supported
+          Status: Connected
+
