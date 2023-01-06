@@ -78,7 +78,7 @@ def peripherals_info():
     return
 
 
-def to_dict():
+def to_json():
     """
     transforms funtions info to a dictionary
     """
@@ -106,12 +106,8 @@ def to_dict():
         'Webcam': peripherals_info(),
         'Wifi': peripherals_info(),
     }
-    return audit_info
-
-
-def serializer():
-    json_info = json.dumps(to_dict())
+    json_info = json.dumps(audit_info)
     return json_info
 
 
-print(serializer())
+print(to_json())
