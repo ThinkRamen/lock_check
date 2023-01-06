@@ -1,8 +1,6 @@
 import json
 import subprocess
 
-password = 'admin17'
-
 
 def serial_number():
     check_serial = "system_profiler SPHardwareDataType | awk '/Serial/ {print $4}'"
