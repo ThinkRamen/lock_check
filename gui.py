@@ -1,31 +1,43 @@
-from PySide6.QtWidgets import (
-    QApplication, QWidget, QVBoxLayout, QComboBox, QLabel, QPushButton
-)
-
 import sys
-app = QApplication(sys.argv)
-app.setStyle('macos')
+from PySide6.QtWidgets import (QComboBox, QPushButton, QApplication,
+                               QVBoxLayout, QWidget, QLabel)
+from lock_check import lock_check_json
+from audit import audit_json
 
-window = QWidget()
-window.setWindowTitle("Eco Tech Mac - Lock Check")
-window.setFixedSize(300, 150)
 
-layout = QVBoxLayout()
+class Main_Widget(QWidget):
+    def __init__(self):
+        QWidget.__init__(self)
 
-"""
-'lock check' only run function used to determine lock status and return as json.
-'lock check + audit' run lock check functions, and additional system info audit functions and return as json.
-"""
-dropdown = QComboBox()
-dropdown.addItem('lock check')
-dropdown.addItem('lock check + audit')
+        # Create widgets
+        self.label = QLabel('select option:')
+        self.button = QPushButton('select')
+        self.dropdown = QComboBox()
+        self.dropdown.addItems(['lock check', 'lock check + audit'])
 
-button = QPushButton('Select')
+        # Create layout and add widgets
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        layout.addWidget(self.dropdown)
+        layout.addWidget(self.button)
+        self.setLayout(layout)
 
-layout.addWidget(QLabel('select option:'))
-layout.addWidget(dropdown)
-layout.addWidget(button)
+        self.button.clicked.connect(self.select_option)
 
-window.setLayout(layout)
-window.show()
-app.exec()
+    def select_option(self):
+        if self.dropdown.currentText() == 'lock check':
+            print(lock_check_json())
+        if self.dropdown.currentText() == 'lock check + audit':
+            print(audit_json())
+
+
+if __name__ == '__main__':
+    # Create the Qt Application
+    app = QApplication(sys.argv)
+    app.setStyle('macos')
+    # Create and show the form
+    widget = Main_Widget()
+    widget.setWindowTitle('Lock Check')
+    widget.show()
+    # Run the main Qt loop
+    sys.exit(app.exec())
