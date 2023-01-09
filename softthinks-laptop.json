@@ -1,0 +1,178 @@
+{
+	"APIVersion": "1.0",
+	"Serial": "PF0JKEFH",
+	"AssetNumber": "ABC123",
+	"Hardware": {
+		"Battery": [
+			{
+				"DesignedCapacity": "10000",
+				"FullChargeCapacity": "8000",
+				"PercentOfDesignedCapacity": "80"
+			},
+			{
+				"DesignedCapacity": "10000",
+				"FullChargeCapacity": "8000",
+				"PercentOfDesignedCapacity": "75"
+			}
+		],
+		"Bios": "R00ET60W (1.35 ) - 09/27/2018 - 58803ECC-270A-11B2-A85C-D7C29F10A0B8",
+		"Bluetooth": "Yes",
+		"CardReader": "Yes",
+		"ChassisType": "Notebook",
+		"CPU": [
+			{
+				"id": "CPU0",
+				"FullName": "INTEL(R) CORE(TM) I5-6200U CPU @ 2.30GHZ",
+				"Manufacturer": "INTEL",
+				"Model": "I5",
+				"Type": "6200U",
+				"Speed": "2.30 Ghz",
+				"Cores": "2",
+				"ProcessorID": "406E3",
+				"Revision": "19971"
+			},
+			{
+				"id": "CPU1",
+				"FullName": "INTEL(R) CORE(TM) I5-6200U CPU @ 2.30GHZ",
+				"Manufacturer": "INTEL",
+				"Model": "I5",
+				"Type": "6200U",
+				"Speed": "2.30 Ghz",
+				"Cores": "2",
+				"ProcessorID": "406E3",
+				"Revision": "19971"
+			}
+		],
+		"CPUSlots": "2",
+		"Grade": "A",
+		"GraphicsCard": "Skylake GT2 [HD Graphics 520]",
+		"HardDrive": [
+			{
+				"ID": "Disk0",
+				"Manufacturer": "SEAGATE",
+				"Model": "ST500LM021-1KJ152",
+				"Serial": "W62D4HMT",
+				"Size": "500 GB",
+				"Type": "HDD",
+				"Interface": "SATA",
+				"Firmware": "0003LIM1",
+				"Health": "Healthy"
+			}
+		],
+		"HardDriveCount": "1",
+		"Manufacturer": "LENOVO",
+		"Model": "ThinkPad E560",
+		"Motherboard": "LENOVO - 20EV002FUS - SDK0J40705 WIN - Not Available",
+		"NetworkAdapter": "1000 Mbps - Intel(R) Ethernet Connection I219-V, V=12.17 [(2) - Ethernet Connection I219-V+Dual Band Wireless-AC 3165 Plus Bluetooth]",
+		"OpticalDrive": "HL-DT-ST,DVDRAM GUE0N    ,LC20",
+		"OpticalType": "DVDRAM",
+		"Ram": [
+			{
+				"BankID": "RamBank0",
+				"Manufacturer": "Samsung",
+				"Model": "M471B5173EB0-YK0",
+				"SerialNumber": "00112810",
+				"Size": "4 GB",
+				"RamType": "DDR3/1600 "
+			},
+			{
+				"BankID": "RamBank2",
+				"Manufacturer": "Kingston",
+				"Model": "9905469-143.A00LF",
+				"SerialNumber": "09197411",
+				"Size": "4 GB",
+				"RamType": "DDR3/1600 "
+			},
+			{
+				"BankID": "RamBank3",
+				"Manufacturer": "",
+				"Model": "",
+				"RamType": "Flash/ ",
+				"SerialNumber": "",
+				"Size": "0.015625 GB"
+			}
+		],
+		"ScreenSize": "15.6",
+		"SCSI Controller": "",
+		"Serial": "PF0JKEFH",
+		"SKU": "LENOVO_MT_20EV_BU_Think_FM_ThinkPad E560",
+		"SoundCard": "Sunrise Point-LP HD Audio",
+		"TotalRamSlots": "2",
+		"TotalRam": "8 GB",
+		"Version": "None",
+		"Webcam": "Yes",
+		"WIFI": "Yes"
+	},
+	"DiagnosticTest": [
+		{
+			"TestName": "Precheck",
+			"TestResult": "PASSED",
+			"TestFailues": "NA",
+			"TestTime": "5 min"
+		},
+		{
+			"TestName": "HardDriveTest",
+			"TestResult": "PASSED",
+			"TestFailues": "NA",
+			"TestTime": "3 min"
+		},
+		{
+			"TestName": "Wifi Test",
+			"TestResult": "PASSED",
+			"TestFailues": "NA",
+			"TestTime": "1 min"
+		},
+		{
+			"TestName": "Webcam Test",
+			"TestResult": "Skipped",
+			"TestFailues": "NA",
+			"TestTime": "1 min"
+		},
+		{
+			"TestName": "Keyboard",
+			"TestResult": "PASSED",
+			"TestFailues": "NA",
+			"TestTime": "1 min"
+		}
+	],
+	"WipeInfo": {
+		"DataErasureReport": {
+			"ReportUUID": "3e77b196-0251-4ba0-bc71-573bd7a04ea7",
+			"StartTime": "2021-03-04T07:27:03",
+			"EndTime": "2021-03-04T07:27:37"
+		},
+		"DiskReports": [
+			{
+				"Disk": "1",
+				"DiskDetails": {
+					"ID": "Disk0",
+					"Manufacturer": "SEAGATE",
+					"Model": "ST500LM021-1KJ152",
+					"Serial": "W62D4HMT",
+					"Size": "500 GB",
+					"Type": "HDD",
+					"Interface": "SATA",
+					"Firmware": "0003LIM1",
+					"Health": "Healthy"
+				},
+				"ErasureReport": {
+					"Duration": "00:00:32",
+					"Status": "Success"
+				},
+				"WipeAlgo": {
+					"Method": "",
+					"Rounds": "0"
+				}
+			}
+		]
+	},
+	"DeployedOSInfo": {
+		"OSVersion": "Windows 10 64",
+		"ImageSelected": "A -Master W10HM64u Legacy 41",
+		"SystemDiskLayout": "MBR"
+	},
+	"EndReport": {
+		"FunctionalGrade": "A",
+		"CosmetricGrade": "2"
+	}
+}
