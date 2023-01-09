@@ -34,7 +34,8 @@ def fmm_status():
 
 
 def icloud_status():  # TODO
-    check_icloud = ''
+    current_user = '/usr/bin/stat -f%Su /dev/console'
+    check_icloud = '/usr/libexec/PlistBuddy -c "print :Accounts:0:isManagedAppleID" /Users/$CURRENTUSER/Library/Preferences/MobileMeAccounts.plist 2>/dev/null'
     proc = subprocess.Popen(check_icloud,
                             shell=True, stdout=subprocess.PIPE)
     output = proc.communicate()[0]
@@ -59,9 +60,9 @@ def activation_lock_status():
 
 
 def mdm_status():  # TODO
-    check_mdm = 'sudo profiles status -type enrollment'
+    check_mdm = 'sudo -S profiles status -type enrollment'
     proc = subprocess.Popen(check_mdm, shell=True, stdout=subprocess.PIPE)
-    output = proc.communicate()[0]
+    output = proc.communicate(input="b'{}\n'".format(default_password))[0]
     mdm_status = output.decode("UTF-8").strip()
     mdm_status = mdm_status.splitlines()
     return mdm_status
@@ -69,10 +70,10 @@ def mdm_status():  # TODO
 
 
 def dep_status():  # TODO
-    check_dep = 'echo "admin" | sudo profiles renew -type enrollment && sudo profiles show -type enrollment'
+    check_dep = 'sudo -S profiles renew -type enrollment && sudo profiles show -type enrollment'
     proc = subprocess.Popen(check_dep, shell=True,
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    output = proc.communicate()[0]
+    output = proc.communicate(input="b'{}\n'".format(default_password))[0]
     dep_status = output.decode("UTF-8").strip()
     if output == "Error fetching Device Enrollment configuration: Client is not DEP enabled." or output == "(null)":
         dep_status = 'Unlocked'
@@ -92,4 +93,7 @@ def lock_check_json():
     dictionary['DEP Status'] = dep_status()
     JSON = json.dumps(dictionary, indent=4)
     return JSON
+
+
 # for commands that require password use encrypted file user can enter password in.
+print(lock_check_json())
