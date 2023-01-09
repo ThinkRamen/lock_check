@@ -37,7 +37,8 @@ if __name__ == '__main__':
     app.setStyle('macos')
     # Create and show the form
     widget = Main_Widget()
-    widget.setWindowTitle('Lock Check')
+    widget.setWindowTitle('lock check')
+    widget.setMinimumSize(300, 150)
     widget.show()
     # Run the main Qt loop
     sys.exit(app.exec())
