@@ -45,7 +45,7 @@ def icloud_status():  # TODO
 
 
 def activation_lock_status():
-    check_activation_lock = '/usr/sbin/system_profiler SPHardwareDataType | awk "/Activation Lock Status/{print $NF}"'
+    check_activation_lock = 'system_profiler SPHardwareDataType | awk "/Activation Lock Status/{print $NF}"'
     proc = subprocess.Popen(check_activation_lock,
                             shell=True, stdout=subprocess.PIPE)
     output = proc.communicate()[0]
@@ -74,8 +74,11 @@ def dep_status():  # TODO
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     output = proc.communicate()[0]
     dep_status = output.decode("UTF-8").strip()
-    if output == "Error fetching Device Enrollment configuration: Client is not DEP enabled." or output == "(null)":
+    print(dep_status)
+    if dep_status == "Error fetching Device Enrollment configuration: Client is not DEP enabled." or output == "(null)":
         dep_status = 'Unlocked'
+    elif dep_status == 'Error fetching Device Enrollment configuration - Request too soon.  Try again later.':
+        print('try again in 5 mins.')
     else:
         dep_status = 'Locked'
     return dep_status
