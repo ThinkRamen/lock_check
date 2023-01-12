@@ -59,17 +59,12 @@ def mdm_status():
 
 
 def dep_status():
-    check_dep_status = "echo {} | sudo -S profiles renew -type enrollment && sudo profiles show -type enrollment"
+    check_dep_status = "echo {} | sudo -S profiles renew -type enrollment && sudo profiles show -type enrollment".format(
+        default_password)
     dep_status = output_cmd(check_dep_status)
     # if unlocked
     if dep_status == "Error fetching Device Enrollment configuration: Client is not DEP enabled." or dep_status == "(null)":
         dep_status = 'Unlocked'
-    # if too many requests
-    elif dep_status == 'Error fetching Device Enrollment configuration - Request too soon.  Try again later.':
-        dep_status = 'Request too soon from last attempt. Try again later.'
-    # if locked
-    else:
-        dep_status = 'Locked'
     return dep_status
     ###
 
