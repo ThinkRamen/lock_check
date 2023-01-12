@@ -39,7 +39,7 @@ def fmm_status():
 
 def icloud_status():
     check_icloud = 'defaults read MobileMeAccounts Accounts'
-    icloud_status = output_cmd(check_icloud)ch
+    icloud_status = output_cmd(check_icloud)
     if icloud_status != '(\n)':
         icloud_status = True
     if icloud_status == '(\n)':
