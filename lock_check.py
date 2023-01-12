@@ -53,16 +53,23 @@ def activation_lock_status():
     ###
 
 
-def mdm_status():
+def mdm_status():  # TODO
+    check_mdm = 'sudo profiles status -type enrollment'
+    proc = subprocess.Popen(check_mdm, shell=True, stdout=subprocess.PIPE)
+    output = proc.communicate()[0]
+    mdm_status = output.decode("UTF-8").strip()
+    mdm_status = mdm_status.splitlines()
     return mdm_status
     ###
 
 
-def dep_status():
-    check_dep_status = "echo {} | sudo -S profiles renew -type enrollment && sudo profiles show -type enrollment"
-    dep_status = output_cmd(check_dep_status)
-    # if unlocked
-    if dep_status == "Error fetching Device Enrollment configuration: Client is not DEP enabled." or dep_status == "(null)":
+def dep_status():  # TODO
+    check_dep = 'echo "admin" | sudo profiles renew -type enrollment && sudo profiles show -type enrollment'
+    proc = subprocess.Popen(check_dep, shell=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    output = proc.communicate()[0]
+    dep_status = output.decode("UTF-8").strip()
+    if output == "Error fetching Device Enrollment configuration: Client is not DEP enabled." or output == "(null)":
         dep_status = 'Unlocked'
     # if too many requests
     elif dep_status == 'Error fetching Device Enrollment configuration - Request too soon.  Try again later.':
@@ -84,6 +91,4 @@ def lock_check_json():
     dictionary['DEP Status'] = dep_status()
     JSON = json.dumps(dictionary, indent=4)
     return JSON
-
-
-print(lock_check_json())
+# for commands that require password use encrypted file user can enter password in.
