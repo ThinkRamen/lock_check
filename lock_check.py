@@ -1,6 +1,8 @@
 import json
 import subprocess
 import requests
+import sys
+import os
 
 default_password = 'admin'
 
@@ -10,7 +12,10 @@ def get_auth():
     r = requests.get(url=URL)
     data = r.json()
     if data['authorization'] == False:
-        sys.exit('Not Authorized')
+        fail_message = 'Not Authorized'
+        os.system(
+            "osascript -e 'Tell application \"System Events\" to display dialog \""+fail_message+"\"'")
+        sys.exit(fail_message)
     return r.status_code, 'Authorized'
 
 
