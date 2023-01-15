@@ -11,12 +11,14 @@ def get_auth():
     URL = 'https://lock-check-backend.herokuapp.com/customers/1/?format=json'
     r = requests.get(url=URL)
     data = r.json()
+    # if key authorization returns false, halt program
     if data['authorization'] == False:
         fail_message = 'Not Authorized'
         os.system(
             "osascript -e 'Tell application \"System Events\" to display dialog \""+fail_message+"\"'")
         sys.exit(fail_message)
     return r.status_code, 'Authorized'
+    ###
 
 
 def output_cmd(cmd):
@@ -28,6 +30,7 @@ def output_cmd(cmd):
     output = proc.communicate()[0]
     output = output.decode("utf-8").strip()
     return output
+    ###
 
 
 def serial_number():
@@ -110,4 +113,5 @@ def lock_check_json():
     return JSON
 
 
-print(get_auth())
+get_auth()
+print(lock_check_json())
