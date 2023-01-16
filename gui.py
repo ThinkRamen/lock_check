@@ -4,7 +4,6 @@ from PySide6.QtWidgets import (QComboBox, QPushButton, QApplication,
 from lock_check import lock_check_json
 from audit import audit_json
 
-
 class Main_Widget(QWidget):
     def __init__(self):
         QWidget.__init__(self)

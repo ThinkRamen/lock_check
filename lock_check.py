@@ -44,34 +44,19 @@ def fmm_status():
     """
     checks for find my mac.
     """
-    check_fmm = 'nvram -p | awk "/fmm-mobileme-token-FMM-BridgeHasAccount/"'
-    fmm_status = output_cmd(check_fmm)
-    fmm_status = fmm_status.split()[1].strip()
-    if fmm_status == 'BridgeHasAccountValue':
-        fmm_status = True
-    else:
-        fmm_status == False
+    fmm_status = output_cmd('./scripts/fmm_status.sh')
     return fmm_status
     ###
 
 
 def icloud_status():
-    check_icloud = 'defaults read MobileMeAccounts Accounts'
-    icloud_status = output_cmd(check_icloud)
-    if icloud_status != '(\n)':
-        icloud_status = True
-    if icloud_status == '(\n)':
-        icloud_status = False
+    icloud_status = output_cmd('./scripts/icloud_status.sh').splitlines()
     return icloud_status
     ###
 
 
 def activation_lock_status():
-    check_activation_lock = 'system_profiler SPHardwareDataType | awk "/Activation Lock Status/"'
-    activation_lock_status = output_cmd(check_activation_lock)
-    activation_lock_status = activation_lock_status.split(':')[1].strip()
-    if activation_lock_status == None:
-        activation_lock_status = 'Not Supported'
+    activation_lock_status = output_cmd('./scripts/activation_lock_status.sh')
     return activation_lock_status
     ###
 
@@ -113,5 +98,4 @@ def lock_check_json():
     return JSON
 
 
-get_auth()
-print(lock_check_json())
+print(get_auth())
