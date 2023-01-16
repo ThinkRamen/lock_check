@@ -52,15 +52,15 @@ REPORT="Find My Mac: $FMMSTATUS\nActivation Lock: $ACTIVATIONLOCKSTATUS\n$MDM\n\
 
 # if activation lock is enabled but no Apple ID is detected
 if (( $APPLEIDEXISTS != 0 )) && [ "$ACTIVATIONLOCKSTATUS" = "Enabled" ]; then
-	echo "Activation Lock is enabled but the current user is not signed into iCloud\n\nFind My Mac: $Red$FMMSTATUS\nActivation Lock: $ACTIVATIONLOCKSTATUS"
+	echo "Activation Lock is enabled but the current user is not signed into iCloud\n\nFind My Mac: $FMMSTATUS\nActivation Lock: $ACTIVATIONLOCKSTATUS"
 
 # if FMM is enabled but no Apple ID is detected
 elif (( $APPLEIDEXISTS != 0 )) && [ "$FMMSTATUS" = "Enabled" ]; then
-	echo "Find My Mac is enabled but the current user is not signed into iCloud\n\nFind My Mac: $Red$FMMSTATUS\nActivation Lock: $ACTIVATIONLOCKSTATUS"
+	echo "Find My Mac is enabled but the current user is not signed into iCloud\n\nFind My Mac: $FMMSTATUS\nActivation Lock: $ACTIVATIONLOCKSTATUS"
 
 # if activation lock is disabled and no Apple ID is detected
 elif (( $APPLEIDEXISTS != 0 )) && [ "$FMMSTATUS" = "Disabled" ]; then
-	echo "Find My Mac is disabled and the current user is not signed into iCloud\n\nFind My Mac: $Green$FMMSTATUS\nActivation Lock: $ACTIVATIONLOCKSTATUS"
+	echo "Find My Mac is disabled and the current user is not signed into iCloud\n\nFind My Mac: $FMMSTATUS\nActivation Lock: $ACTIVATIONLOCKSTATUS"
 
 # if Activation Lock is enabled and Apple ID is NOT managed, report alert
 elif [ "$ACTIVATIONLOCKSTATUS" = "Enabled" ] && [ "$APPLEIDMANAGED" = "False" ]; then
