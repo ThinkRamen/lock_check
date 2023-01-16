@@ -100,9 +100,9 @@ def dep_status():
     elif dep_status == "(null)":
         dep_status = False
     elif dep_status == "Error fetching Device Enrollment configuration - Request too soon.  Try again later.":
-        dep_status = None
         os.system(
-            "osascript -e 'Tell application \"System Events\" to display dialog \""+'DEP request too soon. Try again later.'+"\"'")
+            "osascript -e 'Tell application \"System Events\" to display dialog \""+dep_status+"\"'")
+        dep_status = None
     else:
         dep_status = True
     return dep_status
@@ -118,6 +118,9 @@ def lock_check_json():
     dictionary['MDM Enrollment'] = mdm_status()
     dictionary['Enrolled Via DEP'] = dep_status()
     JSON = json.dumps(dictionary, indent=4)
+    # URL = ''
+    # POST = requests.post(URL, json=JSON)
+    # print(POST.status_code)
     return JSON
 
 
