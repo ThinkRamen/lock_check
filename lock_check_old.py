@@ -37,7 +37,7 @@ def get_auth():
     data = r.json()
     if data['authorization'] == False:
         sys.exit('Not Authorized')
-    return r.status_code
+    return print('get_auth: ' + r.status_code)
 # FUNCTIONS
 # Write activationLock output to text file
 
