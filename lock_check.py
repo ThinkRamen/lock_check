@@ -90,14 +90,11 @@ def mdm_status():
 
 
 def dep_status():
-    check_dep_status = 'echo {} | sudo -S profiles show -type enrollment'.format(
-        default_password)
-    p = subprocess.Popen(check_dep_status, shell=True,
-                         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    dep_status = p.communicate()[1].decode().strip()
+    dep_status = output_cmd('./scripts/dep_status.sh')
+    print(dep_status)
     if dep_status == "Error fetching Device Enrollment configuration: Client is not DEP enabled.":
         dep_status = False
-    elif dep_status == "(null)":
+    elif dep_status == "Device Enrollment configuration: (null)":
         dep_status = False
     elif dep_status == "Error fetching Device Enrollment configuration - Request too soon.  Try again later.":
         os.system(

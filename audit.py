@@ -1,11 +1,24 @@
 # imports
-import subprocess
 import json
 from lock_check import serial_number
+from lock_check import output_cmd
+
+hardware_info = output_cmd()
 
 
-def battery_info():
-    return
+class Battery:
+    def designed_capacity():
+        output = output_cmd('')
+        return
+        ###
+
+    def full_charge_capacity():
+        return
+        ###
+
+    def percent_of_designed_capacity():
+        return
+        ###
 
 
 def bluetooth_info():
@@ -16,44 +29,58 @@ def card_reader_info():
     return
 
 
-def cpu_info():
-    # cpu count
+class Cpu:
+    def count():
+        return
+        ###
 
-    # cpu manafacturer
+    def manufacturer():
+        return
+        ###
 
-    # cpu sku
+    def sku():
+        return
+        ###
 
-    # cpu speed
+    def speed():
+        return
+        ###
 
-    # cpu type
-    return
+    def type():
+        return
+        ###
 
 
 def gpu_info():
     return
-# hdd manafacturer
 
 
-def hdd_info():
-    # hdd model
-    return
-# hdd serial
-    return
-# hdd size
-    return
-# hdd type
+class Hdd:
+    def model():
+        return
+
+    def serial():
+        return
+
+    def size():
+        return
+
+    def type():
+        return
 
 
-def ram_info():
-    # ram count
+class Ram:
+    def count():
+        return
 
-    # ram size
+    def size():
+        return
 
-    # ram type
-    return
+    def type():
+        return
 
 
-def peripherals_info():
+def Peripherals():
     # screen size
 
     # webcam
