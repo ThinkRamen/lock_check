@@ -1,92 +1,125 @@
 # imports
 import json
+import subprocess
 from lock_check import serial_number
-from lock_check import output_cmd
 
-hardware_info = output_cmd()
+
+def hardware_info(cmds, keyword):
+    found_keyword = None
+    # Run the system_profiler command and get the output as a string
+    hardware_info = subprocess.run(cmds, capture_output=True, text=True).stdout
+    # Search the output for the keyword line and extract the value
+    for line in hardware_info.splitlines():
+        if keyword in line:
+            found_keyword = line.strip()
+    return found_keyword
+    ###
 
 
 class Battery:
+    def cycle_count():
+        return int(hardware_info(['system_profiler', 'SPPowerDataType'], 'Cycle Count').split(":")[1])
+
     def designed_capacity():
-        output = output_cmd('')
-        return
+        return int(hardware_info(
+            ['ioreg', '-w0', '-l'], 'DesignCapacity').split('=')[1])
         ###
 
     def full_charge_capacity():
-        return
+        return int(hardware_info(
+            ['system_profiler', 'SPPowerDataType'], 'Full Charge Capacity').split(":")[1])
         ###
 
     def percent_of_designed_capacity():
-        return
+        return int(Battery.full_charge_capacity()/Battery.designed_capacity()*100)
         ###
 
 
+def bios_info():
+    return hardware_info(['system_profiler', 'SPSoftwareDataType'])
+
+
 def bluetooth_info():
-    return
+    return None
+    ###
 
 
 def card_reader_info():
-    return
+    return None
+    ###
 
 
 class Cpu:
     def count():
-        return
+        return None
         ###
 
     def manufacturer():
-        return
+        return None
         ###
 
     def sku():
-        return
+        return None
         ###
 
     def speed():
-        return
+        return None
         ###
 
     def type():
-        return
+        return None
         ###
 
 
 def gpu_info():
-    return
+    return None
+    ###
 
 
 class Hdd:
     def model():
-        return
+        return None
 
     def serial():
-        return
+        return None
 
     def size():
-        return
+        return None
 
     def type():
-        return
+        return None
+        ###
+
+    def manufacturer():
+        return None
 
 
-class Ram:
+class Ram():
     def count():
-        return
+        return None
+        ###
 
     def size():
-        return
+        return None
+        ###
+
+    def total_size():
+        return None
 
     def type():
-        return
+        return None
+        ###
 
 
-def Peripherals():
-    # screen size
+class Peripherals():
+    def screen_size():
+        return None
 
-    # webcam
+    def webcam():
+        return None
 
-    # wifi
-    return
+    def wifi():
+        return None
 
 
 def audit_json():
@@ -97,16 +130,19 @@ def audit_json():
         'Serial': serial_number(),
         'Hardware': {
             'Battery': {
-                'DesignedCapacity': '',
+                'CycleCount': Battery.cycle_count(),
+                'DesignedCapacity': Battery.designed_capacity(),
+                'FullChargeCapacity': Battery.full_charge_capacity(),
+                'PercentOfDesignedCapacity': Battery.percent_of_designed_capacity(),
             },
-            "Bios": '',
+            "Bios": bios_info(),
             'Bluetooth': bluetooth_info(),
             'Card Reader': card_reader_info(),
-            'ChassisType': 'Notebook',
+            'ChassisType': '',
             'CPU': {
                 'id': '',
                 'FullName': '',
-                'Manafacturer': '',
+                'Manufacturer': '',
                 'Model': '',
                 'Type': '',
                 'Speed': '',
@@ -114,20 +150,19 @@ def audit_json():
 
             },
             'GPU': gpu_info(),
-            'HDD MFG': hdd_info(),
-            'HDD Model': hdd_info(),
-            'HDD Serial': hdd_info(),
-            'HDD Type': hdd_info(),
+            'HDD MFG': Hdd.manufacturer(),
+            'HDD Model': Hdd.model(),
+            'HDD Serial': Hdd.serial(),
+            'HDD Type': Hdd.type(),
             'Optic Type': '',
-            'Ram Count': ram_info(),
-            'Ram Size': ram_info(),
-            'Ram Total Size': ram_info(),
-            'Ram Type': ram_info(),
-            'Screen Size': peripherals_info(),
-            'Webcam': peripherals_info(),
-            'Wifi': peripherals_info(),
+            'Ram Count': Ram.count(),
+            'Ram Size': Ram.size(),
+            'Ram Total Size': Ram.total_size(),
+            'Ram Type': Ram.type(),
+            'Screen Size': Peripherals.screen_size(),
+            'Webcam': Peripherals.webcam(),
+            'Wifi': Peripherals.wifi(),
         }
     }
     json_info = json.dumps(audit_info, indent=4)
-
     return json_info
