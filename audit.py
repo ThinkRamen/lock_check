@@ -1,6 +1,7 @@
 # imports
 import json
 import subprocess
+import re
 from lock_check import serial_number
 
 
@@ -39,7 +40,8 @@ class Battery:
 
 
 def bios_info():
-    return hardware_info(['system_profiler', 'SPSoftwareDataType'])
+    # return hardware_info(['system_profiler', 'SPSoftwareDataType'])
+    return None
 
 
 def bluetooth_info():
@@ -102,7 +104,7 @@ def manufacturer_info():
 
 
 def model_info():
-    return hardware_info(['sysctl', '-n', 'hw.model'])
+    return hardware_info(['sysctl', '-n', 'hw.model']).strip()
 
 
 class Ram():
@@ -115,7 +117,7 @@ class Ram():
         ###
 
     def total_size():
-        return None
+        ram_info = hardware_info(['system_profiler', 'SPMemoryDataType'])
 
     def type():
         return None
@@ -182,3 +184,6 @@ def audit_json():
     }
     json_info = json.dumps(audit_info, indent=4)
     return json_info
+
+
+print(audit_json())
