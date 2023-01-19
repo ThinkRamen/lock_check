@@ -4,14 +4,17 @@ import subprocess
 from lock_check import serial_number
 
 
-def hardware_info(cmds, keyword):
+def hardware_info(cmds, keyword=None):
     found_keyword = None
     # Run the system_profiler command and get the output as a string
     hardware_info = subprocess.run(cmds, capture_output=True, text=True).stdout
-    # Search the output for the keyword line and extract the value
-    for line in hardware_info.splitlines():
-        if keyword in line:
-            found_keyword = line.strip()
+    if keyword != None:
+        # Search the output for the keyword line and extract the value
+        for line in hardware_info.splitlines():
+            if keyword in line:
+                found_keyword = line.strip()
+    else:
+        return hardware_info
     return found_keyword
     ###
 
@@ -94,6 +97,14 @@ class Hdd:
         return None
 
 
+def manufacturer_info():
+    return hardware_info(['system_profiler', 'SPHardwareDataType'], 'Manufacturer')
+
+
+def model_info():
+    return hardware_info(['sysctl', '-n', 'hw.model'])
+
+
 class Ram():
     def count():
         return None
@@ -149,11 +160,16 @@ def audit_json():
                 'Cores': '',
 
             },
-            'GPU': gpu_info(),
-            'HDD MFG': Hdd.manufacturer(),
-            'HDD Model': Hdd.model(),
-            'HDD Serial': Hdd.serial(),
-            'HDD Type': Hdd.type(),
+            'GraphicsCard': gpu_info(),
+            'HardDrive': {
+                'Manufacturer': Hdd.manufacturer(),
+                'Model': Hdd.model(),
+                'Serial': Hdd.serial(),
+                'Type': Hdd.type(),
+            },
+            'Manufacturer': manufacturer_info(),
+            'Model': model_info(),
+            # MOTHERBOARD
             'Optic Type': '',
             'Ram Count': Ram.count(),
             'Ram Size': Ram.size(),
