@@ -40,18 +40,7 @@ class Battery:
 
 
 def bios_info():
-    # return hardware_info(['system_profiler', 'SPSoftwareDataType'])
-    return None
-
-
-def bluetooth_info():
-    return None
-    ###
-
-
-def card_reader_info():
-    return None
-    ###
+    return hardware_info(['system_profiler', 'SPHardwareDataType'], 'System Firmware Version').split(' ')[3]
 
 
 class Cpu:
@@ -77,7 +66,7 @@ class Cpu:
 
 
 def gpu_info():
-    return None
+    return hardware_info(['system_profiler', 'SPDisplaysDataType'], 'Chipset Model').split(':')[1].strip()
     ###
 
 
@@ -117,7 +106,7 @@ class Ram():
         ###
 
     def total_size():
-        ram_info = hardware_info(['system_profiler', 'SPMemoryDataType'])
+        return hardware_info(['system_profiler', 'SPHardwareDataType'], 'Memory').split(':')[1].strip()
 
     def type():
         return None
@@ -126,6 +115,7 @@ class Ram():
 
 class Peripherals():
     def screen_size():
+
         return None
 
     def webcam():
@@ -149,17 +139,17 @@ def audit_json():
                 'PercentOfDesignedCapacity': Battery.percent_of_designed_capacity(),
             },
             "Bios": bios_info(),
-            'Bluetooth': bluetooth_info(),
-            'Card Reader': card_reader_info(),
-            'ChassisType': '',
+            'Bluetooth': None,
+            'Card Reader': None,
+            'ChassisType': None,
             'CPU': {
-                'id': '',
-                'FullName': '',
-                'Manufacturer': '',
-                'Model': '',
-                'Type': '',
-                'Speed': '',
-                'Cores': '',
+                'id': None,
+                'FullName': None,
+                'Manufacturer': None,
+                'Model': None,
+                'Type': None,
+                'Speed': None,
+                'Cores': None,
 
             },
             'GraphicsCard': gpu_info(),
@@ -172,7 +162,7 @@ def audit_json():
             'Manufacturer': manufacturer_info(),
             'Model': model_info(),
             # MOTHERBOARD
-            'Optic Type': '',
+            'Optic Type': None,
             'Ram Count': Ram.count(),
             'Ram Size': Ram.size(),
             'Ram Total Size': Ram.total_size(),
