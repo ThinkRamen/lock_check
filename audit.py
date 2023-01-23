@@ -35,7 +35,7 @@ class Battery:
         ###
 
     def percent_of_designed_capacity():
-        return int(Battery.full_charge_capacity()/Battery.designed_capacity()*100)
+        return round(float(Battery.full_charge_capacity()/Battery.designed_capacity()*100), 2)
         ###
 
 
@@ -44,24 +44,29 @@ def bios_info():
 
 
 class Cpu:
-    def count():
-        return None
+    def full_name():
+        return hardware_info(['sysctl', '-n', 'machdep.cpu.brand_string']).strip()
         ###
 
     def manufacturer():
-        return None
+        return hardware_info(['system_profiler', 'SPHardwareDataType'])
         ###
 
-    def sku():
-        return None
-        ###
-
-    def speed():
+    def model():
         return None
         ###
 
     def type():
         return None
+        ###
+
+    def speed():
+        return hardware_info(
+            ['system_profiler', 'SPHardwareDataType'], 'Processor Speed').split(':')[1].strip()
+        ###
+
+    def cores():
+        return hardware_info(['system_profiler', 'SPHardwareDataType'], 'Total Number of Cores').split(':')[1].strip()
         ###
 
 
@@ -143,14 +148,12 @@ def audit_json():
             'Card Reader': None,
             'ChassisType': None,
             'CPU': {
-                'id': None,
-                'FullName': None,
+                'FullName': Cpu.full_name(),
                 'Manufacturer': None,
                 'Model': None,
                 'Type': None,
-                'Speed': None,
-                'Cores': None,
-
+                'Speed': Cpu.speed(),
+                'Cores': Cpu.cores(),
             },
             'GraphicsCard': gpu_info(),
             'HardDrive': {
