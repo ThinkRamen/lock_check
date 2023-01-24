@@ -1,21 +1,25 @@
 # imports
 import json
 import subprocess
-import re
 from lock_check import serial_number
 
 
 def hardware_info(cmds, keyword=None):
     found_keyword = None
     # Run the system_profiler command and get the output as a string
-    hardware_info = subprocess.run(cmds, capture_output=True, text=True).stdout
-    if keyword != None:
-        # Search the output for the keyword line and extract the value
-        for line in hardware_info.splitlines():
-            if keyword in line:
-                found_keyword = line.strip()
-    else:
-        return hardware_info
+    try:
+        hardware_info = subprocess.run(
+            cmds, capture_output=True, text=True).stdout
+        if keyword != None:
+            # Search the output for the keyword line and extract the value
+            for line in hardware_info.splitlines():
+                if keyword in line:
+                    found_keyword = line.strip()
+        else:
+            return hardware_info
+    except Exception as e:
+        print('exception:', e)
+
     return found_keyword
     ###
 
@@ -23,6 +27,7 @@ def hardware_info(cmds, keyword=None):
 class Battery:
     def cycle_count():
         return int(hardware_info(['system_profiler', 'SPPowerDataType'], 'Cycle Count').split(":")[1])
+        ###
 
     def designed_capacity():
         return int(hardware_info(
@@ -37,10 +42,12 @@ class Battery:
     def percent_of_designed_capacity():
         return round(float(Battery.full_charge_capacity()/Battery.designed_capacity()*100), 2)
         ###
+    ###
 
 
 def bios_info():
     return hardware_info(['system_profiler', 'SPHardwareDataType'], 'System Firmware Version').split(' ')[3]
+    ###
 
 
 class Cpu:
@@ -179,4 +186,4 @@ def audit_json():
     return json_info
 
 
-print(audit_json())
+hardware_info(['systemctl'])
