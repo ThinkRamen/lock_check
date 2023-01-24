@@ -119,6 +119,3 @@ def lock_check_json():
     # POST = requests.post(URL, json=JSON)
     # print(POST.status_code)
     return JSON
-
-
-get_auth()

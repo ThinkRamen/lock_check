@@ -184,6 +184,3 @@ def audit_json():
     }
     json_info = json.dumps(audit_info, indent=4)
     return json_info
-
-
-hardware_info(['systemctl'])
