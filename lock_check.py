@@ -44,11 +44,14 @@ def fmm_status():
     """
     checks for find my mac.
     """
-    fmm_status = output_cmd('./scripts/fmm_status.sh')
-    if fmm_status == 'Enabled':
-        fmm_status = True
-    elif fmm_status == 'Disabled':
-        fmm_status = False
+    try:
+        fmm_status = output_cmd('./scripts/fmm_status.sh')
+        if fmm_status == 'Enabled':
+            fmm_status = True
+        elif fmm_status == 'Disabled':
+            fmm_status = False
+    except:
+        print('error: fmm_status()')
     return fmm_status
     ###
 
@@ -101,7 +104,7 @@ def dep_status():
             "osascript -e 'Tell application \"System Events\" to display dialog \""+dep_status+"\"'")
         dep_status = None
     else:
-        dep_status = True
+        return dep_status
     return dep_status
     ###
 

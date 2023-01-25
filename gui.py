@@ -4,9 +4,9 @@ Creates GUI window for txt field output and option selection.
 # imports
 import tkinter as tk
 from tkinter import ttk
-from lock_check import lock_check_json, get_auth
+from lock_check import serial_number, lock_check_json, get_auth
 from audit import audit_json
-import sys
+import os
 
 # functions
 
@@ -16,14 +16,28 @@ def make_selection():
     text.config(state='normal')
     text.delete("1.0", "end")
     if selection.get() == 'lock check':
-        text.insert(0.0, lock_check_json())
+        lock_check = lock_check_json()
+        text.insert(0.0, lock_check)
+        to_txt_file(lock_check)
         text.insert(0.0, '\n')
     if selection.get() == 'lock check + audit':
-        text.insert('end', lock_check_json())
+        lock_check = lock_check_json()
+        audit = audit_json()
+        text.insert('end', lock_check)
         text.insert('end', '\n')
-        text.insert('end', audit_json())
+        text.insert('end', audit)
+        to_txt_file(lock_check + audit)
     text.config(state='disabled')
     ###
+
+
+def to_txt_file(txt):
+    file = open(f'output/{serial_number()}.txt', 'w')
+    file.write(txt)
+    file.close()
+    return os.path.abspath(file.name)
+    ###
+    return
 
 
 root = tk.Tk()
