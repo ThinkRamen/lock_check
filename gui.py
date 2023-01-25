@@ -9,8 +9,11 @@ import sys
 
 def make_selection():
     get_auth()
-    text.insert(1.0, audit_json())
-    text.insert(1.0, lock_check_json())
+    if selection.get() == 'lock check':
+        text.insert(1.0, lock_check_json())
+    if selection.get() == 'lock check + audit':
+        text.insert(1.0, lock_check_json())
+        text.insert(1.0, audit_json())
     ###
 # classes
 
