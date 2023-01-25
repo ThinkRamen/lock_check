@@ -36,7 +36,7 @@ class Battery:
 
     def full_charge_capacity():
         return int(hardware_info(
-            ['system_profiler', 'SPPowerDataType'], 'Full Charge Capacity').split(":")[1])
+            ['ioreg', '-w0', '-l'], 'AppleRawMaxCapacity').split('=')[1])
         ###
 
     def percent_of_designed_capacity():

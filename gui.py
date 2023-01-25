@@ -1,3 +1,7 @@
+'''
+Creates GUI window for txt field output and option selection.
+'''
+# imports
 import tkinter as tk
 from tkinter import ttk
 from lock_check import lock_check_json, get_auth
@@ -10,14 +14,12 @@ import sys
 def make_selection():
     get_auth()
     if selection.get() == 'lock check':
-        text.insert(1.0, lock_check_json())
+        text.insert(0.0, lock_check_json())
     if selection.get() == 'lock check + audit':
-        text.insert(1.0, lock_check_json())
-        text.insert(1.0, audit_json())
+        text.insert('end', lock_check_json())
+        text.insert('end', '\n')
+        text.insert('end', audit_json())
     ###
-# classes
-
-# main
 
 
 root = tk.Tk()
