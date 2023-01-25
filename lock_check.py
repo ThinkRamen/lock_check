@@ -21,6 +21,14 @@ def get_auth():
     ###
 
 
+def to_txt_file(txt):
+    file = open(f'output/{serial_number()}.txt', 'w')
+    file.write(txt)
+    file.close()
+    return os.path.abspath(file.name)
+    ###
+
+
 def output_cmd(cmd):
     """
     returns terminal command using subprocess.Popen, formats the data from bytes to str, and formats it.
@@ -34,9 +42,8 @@ def output_cmd(cmd):
 
 
 def serial_number():
-    serial_number = output_cmd(
+    return output_cmd(
         "system_profiler SPHardwareDataType | awk '/Serial/ {print $4}'")
-    return serial_number
     ###
 
 
