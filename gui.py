@@ -30,23 +30,16 @@ root = tk.Tk()
 text = tk.Text()
 root.title('Lock Check')
 root.resizable(False, False)
-# root.geometry("200x150")
 root.eval('tk::PlaceWindow . center')
-###
 title = tk.Label(root, text='select an option:').pack()
-###
 selection = ttk.Combobox(root, state='readonly', values=[
     'lock check', 'lock check + audit'])
 selection.pack()
 selection.current(1)
-text = tk.Text(root)
+text = tk.Text(root, state='disabled')
 text.pack()
-
-
 button = ttk.Button(root, text='select', command=make_selection)
 button.pack()
 
 root.mainloop()
-
-
 ###
