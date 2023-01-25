@@ -13,12 +13,16 @@ import sys
 
 def make_selection():
     get_auth()
+    text.config(state='normal')
+    text.delete("1.0", "end")
     if selection.get() == 'lock check':
         text.insert(0.0, lock_check_json())
+        text.insert(0.0, '\n')
     if selection.get() == 'lock check + audit':
         text.insert('end', lock_check_json())
         text.insert('end', '\n')
         text.insert('end', audit_json())
+    text.config(state='disabled')
     ###
 
 
