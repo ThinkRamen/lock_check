@@ -5,6 +5,7 @@ import sys
 import os
 
 default_password = 'admin'
+SH_DIR = os.path.join(os.path.dirname(__file__), 'scripts')
 
 
 def get_auth():
@@ -22,7 +23,7 @@ def get_auth():
 
 
 def to_txt_file(txt):
-    file = open(f'output/{serial_number()}.txt', 'w')
+    file = open(f'Desktop/{serial_number()}.txt', 'w')
     file.write(txt)
     file.close()
     return os.path.abspath(file.name)
@@ -52,66 +53,78 @@ def fmm_status():
     checks for find my mac.
     """
     try:
-        fmm_status = output_cmd('./scripts/fmm_status.sh')
+        fmm_status = output_cmd(os.path.join(SH_DIR, 'fmm_status.sh'))
         if fmm_status == 'Enabled':
             fmm_status = True
         elif fmm_status == 'Disabled':
             fmm_status = False
-    except:
-        print('error: fmm_status()')
+    except Exception as e:
+        print(f'error: {e}')
     return fmm_status
     ###
 
 
 def icloud_status():
-    icloud_status = output_cmd('./scripts/icloud_status.sh').splitlines()
-    # bash: $?: false = 1, true = 0
-    if icloud_status[2] == "0":
-        icloud_status = True
-    elif icloud_status[2] == "1":
-        icloud_status = False
+    try:
+        icloud_status = output_cmd(f'{SH_DIR}/icloud_status.sh').splitlines()
+        # bash: $?: false = 1, true = 0
+        if icloud_status[2] == "0":
+            icloud_status = True
+        elif icloud_status[2] == "1":
+            icloud_status = False
+    except Exception as e:
+        print(f'error: {e}')
     return icloud_status
     ###
 
 
 def activation_lock_status():
-    activation_lock_status = output_cmd('./scripts/activation_lock_status.sh')
-    if activation_lock_status == 'Enabled':
-        activation_lock_status = True
-    elif activation_lock_status == 'Disabled':
-        activation_lock_status = False
-    elif activation_lock_status == "Not Supported":
-        activation_lock_status = None
+    try:
+        activation_lock_status = output_cmd(
+            f'{SH_DIR}/activation_lock_status.sh')
+        if activation_lock_status == 'Enabled':
+            activation_lock_status = True
+        elif activation_lock_status == 'Disabled':
+            activation_lock_status = False
+        elif activation_lock_status == "Not Supported":
+            activation_lock_status = None
+    except Exception as e:
+        print(f'error: {e}')
     return activation_lock_status
     ###
 
 
 def mdm_status():
-    check_mdm_status = 'echo {} | sudo -S profiles status -type enrollment'.format(
-        default_password)
-    mdm_status = output_cmd(check_mdm_status)
-    mdm_status = mdm_status.splitlines()[1].split(':')[1].strip()
-    if mdm_status == 'No':
-        mdm_status = False
-    elif mdm_status == 'Yes':
-        mdm_status = True
+    try:
+        check_mdm_status = f'echo {default_password} | sudo -S profiles status -type enrollment'
+        mdm_status = output_cmd(check_mdm_status)
+        mdm_status = mdm_status.splitlines()[1].split(':')[1].strip()
+        if mdm_status == 'No':
+            mdm_status = False
+        elif mdm_status == 'Yes':
+            mdm_status = True
+    except Exception as e:
+        print(f'error: {e}')
     return mdm_status
     ###
 
 
 def dep_status():
-    dep_status = output_cmd('./scripts/dep_status.sh')
-    print(dep_status)
-    if dep_status == "Error fetching Device Enrollment configuration: Client is not DEP enabled.":
-        dep_status = False
-    elif dep_status == "Device Enrollment configuration: (null)":
-        dep_status = False
-    elif dep_status == "Error fetching Device Enrollment configuration - Request too soon.  Try again later.":
-        os.system(
-            "osascript -e 'Tell application \"System Events\" to display dialog \""+dep_status+"\"'")
-        dep_status = None
-    else:
-        return dep_status
+    try:
+        dep_status = output_cmd(f'{SH_DIR}/dep_status.sh')
+        print(dep_status)
+        if dep_status == "Error fetching Device Enrollment configuration: Client is not DEP enabled.":
+            dep_status = False
+        elif dep_status == "Device Enrollment configuration: (null)":
+            dep_status = False
+        elif dep_status == "Error fetching Device Enrollment configuration - Request too soon.  Try again later.":
+            os.system(
+                "osascript -e 'Tell application \"System Events\" to display dialog \""+dep_status+"\"'")
+            dep_status = None
+        else:
+            return dep_status
+    except Exception as e:
+        print(f'error: {e}')
     return dep_status
     ###
 

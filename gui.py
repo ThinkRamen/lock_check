@@ -7,6 +7,7 @@ from tkinter import ttk
 from lock_check import lock_check_json, get_auth, to_txt_file
 from audit import audit_json
 from lock_check_old import firefox_automation
+from sys import exit
 # functions
 
 
@@ -33,7 +34,6 @@ def make_selection():
         text.insert('end', '\n')
         text.insert('end', audit)
         firefox_automation(to_txt_file(lock_check + audit))
-
     text.config(state='disabled')
     ###
 
@@ -55,3 +55,4 @@ button.pack()
 
 root.mainloop()
 ###
+exit()

@@ -4,3 +4,5 @@ build/
 dist/
 required/
 geckodriver.log/
+gui.spec/
+lock_check.spec/

@@ -3,18 +3,14 @@
 # imports
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-import os
 import time
 from lock_check import serial_number
 # variable declaration
-thisPath = os.path.dirname(__file__)
-GECKO_DRIVER = f"{thisPath}/required/geckodriver"
-options = Options()
-options.binary_location = f"{thisPath}/required/Firefox.app/Contents/MacOS/firefox-bin"
+
 enterKey = "\ue007"
 # user details
-email = "alejandro.ramos@no.email"
-password = "AssetRecovery1"
+email = 'alejandro.ramos@no.email'
+password = 'AssetRecovery1'
 serial = serial_number()
 
 # Write activationLock output to text file
@@ -22,7 +18,8 @@ serial = serial_number()
 
 def firefox_automation(txt_file):
     # application -->
-    driver = webdriver.Firefox(options=options, executable_path=GECKO_DRIVER)
+    driver = webdriver.Firefox()
+
     driver.maximize_window()
     # launch website url
     driver.get('https://smarterp.io/')
@@ -60,6 +57,4 @@ def firefox_automation(txt_file):
     image_link_element = driver.find_element(
         "xpath", f"//a[normalize-space()='{serial}.txt']")
     image_link_element.click()
-    time.sleep(60)
-    driver.quit()
     ###
