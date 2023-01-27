@@ -4,15 +4,15 @@
     "iCloud Enabled": true,
     "Activation Lock Enabled": false,
     "MDM Enrollment": false,
-    "Enrolled Via DEP": ""
+    "Enrolled Via DEP": false
 }{
     "Serial": "C02XG20AJHD4",
     "Hardware": {
         "Battery": {
             "CycleCount": 500,
             "DesignedCapacity": 5088,
-            "FullChargeCapacity": 4039,
-            "PercentOfDesignedCapacity": 79.38
+            "FullChargeCapacity": 3852,
+            "PercentOfDesignedCapacity": 75.71
         },
         "Bios": "1916.60.2.0.0",
         "Bluetooth": null,

@@ -1,1 +1,43 @@
 1674635582956	geckodriver	INFO	Listening on 127.0.0.1:62312
+1674635816750	geckodriver	INFO	Listening on 127.0.0.1:62458
+1674635817036	mozrunner::runner	INFO	Running command: "/Users/admin/Documents/GitHub/lock_check/required/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "62459" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofileLRmnSn"
+1674635821284	Marionette	INFO	Marionette enabled
+1674635821321	Marionette	INFO	Listening on port 62464
+Read port: 62464
+WebDriver BiDi listening on ws://127.0.0.1:62459
+1674635821554	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofileLRmnSn/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62459/devtools/browser/5e197994-27ca-43f2-8542-101da0504546
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+1674636081616	geckodriver	INFO	Listening on 127.0.0.1:62562
+1674636082122	mozrunner::runner	INFO	Running command: "/Users/admin/Documents/GitHub/lock_check/required/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "62563" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofilecFEqEq"
+1674636082643	Marionette	INFO	Marionette enabled
+1674636082672	Marionette	INFO	Listening on port 62568
+Read port: 62568
+WebDriver BiDi listening on ws://127.0.0.1:62563
+1674636082899	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofilecFEqEq/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62563/devtools/browser/b6eb1e62-80c2-42b6-8f30-a59c05c455b0
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+1674778762788	Marionette	INFO	Stopped listening on port 62464
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1674778764298	Marionette	INFO	Stopped listening on port 62568
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1674779759504	geckodriver	INFO	Listening on 127.0.0.1:49218
+1674779759977	mozrunner::runner	INFO	Running command: "/Users/admin/Documents/GitHub/lock_check/required/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "49219" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofilefEmfAQ"
+1674779760748	Marionette	INFO	Marionette enabled
+1674779760788	Marionette	INFO	Listening on port 49225
+Read port: 49225
+WebDriver BiDi listening on ws://127.0.0.1:49219
+1674779761028	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofilefEmfAQ/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49219/devtools/browser/5b638110-906d-4063-b7d3-b6e0b979ec99
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+1674779769882	Marionette	INFO	Stopped listening on port 49225
+1674779770741	geckodriver::marionette	ERROR	Failed to close browser connection: Socket is not connected (os error 57)
