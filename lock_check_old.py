@@ -2,9 +2,11 @@
 
 # imports
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+
 import time
 from lock_check import serial_number
+from resources import find_data_file
 # variable declaration
 
 enterKey = "\ue007"
@@ -17,6 +19,8 @@ serial = serial_number()
 
 
 def firefox_automation(txt_file):
+    binary = FirefoxBinary(find_data_file(
+        'Firefox.app/Contents/MacOS/firefox-bin'))
     # application -->
     driver = webdriver.Firefox()
 

@@ -5,13 +5,12 @@ from cx_Freeze import setup, Executable
 # fine tuning.
 build_options = {'includes': ['resources', 'lock_check', 'lock_check_old', 'audit'], 'include_files': ['required/'],
                  'zip_include_packages': ['encodings', 'pyside6'], }
-mac_options = {}
 executables = [
-    Executable('gui.py', icon='./lock.icns')
+    Executable('gui.py')
 ]
 
 setup(name='lockcheck',
       version='2.0',
       description='',
-      options={'build_exe': build_options, 'bdist_mac': mac_options},
+      options={'build_exe': build_options},
       executables=executables)

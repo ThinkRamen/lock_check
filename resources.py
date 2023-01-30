@@ -11,4 +11,4 @@ def find_data_file(filename):
         # Change this bit to match where you store your data files:
         datadir = os.path.dirname(__file__)
 
-    return os.path.join(datadir, 'required', filename)
+    return os.path.join(datadir, 'required/', filename)
