@@ -114,3 +114,21 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://127.0.0.1:54317/devtools/browser/32210055-2f37-4319-ad82-ef8ee5ae9895
 1674805222809	Marionette	INFO	Stopped listening on port 54322
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1675046592221	geckodriver	INFO	Listening on 127.0.0.1:55048
+1675046592696	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55049" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofileMExBrR"
+1675046593244	Marionette	INFO	Marionette enabled
+1675046593491	Marionette	INFO	Listening on port 55057
+Read port: 55057
+WebDriver BiDi listening on ws://127.0.0.1:55049
+1675046593618	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ld/spsc1ty54fb9rysnfchwrwh80000gn/T/rust_mozprofileMExBrR/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55049/devtools/browser/4cf6ad4b-7a8b-40ba-b28e-2112f9d3e2b5
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://smarterp.io."
+JavaScript warning: https://pagead2.googlesyndication.com/bg/qJHh-aUWlcs1sYgB_nvEplbJ1uLycgbr3tEtSMk_R_c.js line 2 > eval line 3853 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/qJHh-aUWlcs1sYgB_nvEplbJ1uLycgbr3tEtSMk_R_c.js line 2 > eval line 4518 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://z.moatads.com/beeswaxdisplay108801632049/moatad.js#moatClientLevel1=514&moatClientLevel2=12432&moatClientLevel3=81182&moatClientLevel4=22622&moatClientSlicer1=13947&moatClientSlicer2=3890135258&zMoatAID=1675048528640296.3148986461.5344.indeed&zMoatInvSource=GOOGLE_ADX, line 239: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://z.moatads.com/beeswaxdisplay108801632049/moatad.js#moatClientLevel1=514&moatClientLevel2=12432&moatClientLevel3=81182&moatClientLevel4=33884&moatClientSlicer1=13947&moatClientSlicer2=734352169&zMoatAID=1675048528499673.3280567369.5406.indeed&zMoatInvSource=GOOGLE_ADX, line 239: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1675049499410	Marionette	INFO	Stopped listening on port 55057

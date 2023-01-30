@@ -1,0 +1,8 @@
+{
+    "Serial": "C02XG20AJHD4",
+    "FMM Enabled": true,
+    "iCloud Enabled": true,
+    "Activation Lock Enabled": true,
+    "MDM Enrollment": false,
+    "Enrolled Via DEP": false
+}

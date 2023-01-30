@@ -1,8 +1,7 @@
 .venv/
 .vscode/
 build/
-dist/
-required/
+required/Firefox.app/
 geckodriver.log/
 gui.spec/
 lock_check.spec/

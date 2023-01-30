@@ -3,9 +3,8 @@ import subprocess
 import requests
 import sys
 import os
-
+from resources import find_data_file
 default_password = 'admin'
-SH_DIR = os.path.join(os.path.dirname(__file__), 'scripts')
 
 
 def get_auth():
@@ -23,7 +22,7 @@ def get_auth():
 
 
 def to_txt_file(txt):
-    file = open(f'Desktop/{serial_number()}.txt', 'w')
+    file = open(f'{serial_number()}.txt', 'w')
     file.write(txt)
     file.close()
     return os.path.abspath(file.name)
@@ -53,7 +52,7 @@ def fmm_status():
     checks for find my mac.
     """
     try:
-        fmm_status = output_cmd(os.path.join(SH_DIR, 'fmm_status.sh'))
+        fmm_status = output_cmd(find_data_file('fmm_status.sh'))
         if fmm_status == 'Enabled':
             fmm_status = True
         elif fmm_status == 'Disabled':
@@ -66,7 +65,8 @@ def fmm_status():
 
 def icloud_status():
     try:
-        icloud_status = output_cmd(f'{SH_DIR}/icloud_status.sh').splitlines()
+        icloud_status = output_cmd(
+            find_data_file('icloud_status.sh')).splitlines()
         # bash: $?: false = 1, true = 0
         if icloud_status[2] == "0":
             icloud_status = True
@@ -81,7 +81,7 @@ def icloud_status():
 def activation_lock_status():
     try:
         activation_lock_status = output_cmd(
-            f'{SH_DIR}/activation_lock_status.sh')
+            find_data_file('activation_lock_status.sh'))
         if activation_lock_status == 'Enabled':
             activation_lock_status = True
         elif activation_lock_status == 'Disabled':
@@ -111,8 +111,7 @@ def mdm_status():
 
 def dep_status():
     try:
-        dep_status = output_cmd(f'{SH_DIR}/dep_status.sh')
-        print(dep_status)
+        dep_status = output_cmd(find_data_file('dep_status.sh'))
         if dep_status == "Error fetching Device Enrollment configuration: Client is not DEP enabled.":
             dep_status = False
         elif dep_status == "Device Enrollment configuration: (null)":
